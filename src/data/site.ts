@@ -46,18 +46,18 @@ export const heroStats = [
 
 // logos live in /public/logos. `h` = logo height class, tuned so each mark looks optically the same size
 export const clients = [
-  { name: "Moody's", sector: 'Financial Services', logo: '/logos/moodys.svg', h: 'h-7' },
-  { name: 'Dentsu', sector: 'Advertising', logo: '/logos/dentsu.svg', h: 'h-8' },
-  { name: 'GlobalLogic', sector: 'Digital Engineering', logo: '/logos/globallogic.png', h: 'h-10' },
-  { name: 'Infosys', sector: 'IT Services', logo: '/logos/infosys.svg', h: 'h-9' },
-  { name: 'Wipro', sector: 'IT Services', logo: '/logos/wipro.svg', h: 'h-14' },
-  { name: 'TCS', sector: 'IT Consulting', logo: '/logos/tcs.svg', h: 'h-12' },
-  { name: 'Kyndryl', sector: 'Infrastructure', logo: '/logos/kyndryl.svg', h: 'h-8' },
-  { name: 'Amphenol', sector: 'Manufacturing', logo: '/logos/amphenol.svg', h: 'h-7' },
-  { name: 'DishTV', sector: 'Media', logo: '/logos/dishtv.svg', h: 'h-10' },
-  { name: 'Actian', sector: 'Data Platforms', logo: '/logos/actian.svg', h: 'h-9' },
-  { name: 'Crecientech', sector: 'Technology', logo: '/logos/crecientech.png', h: 'h-11' },
-  { name: 'Primus Partners', sector: 'Public Sector', logo: '/logos/primus.png', h: 'h-10' },
+  { name: "Moody's", sector: 'Financial Services', logo: '/logos/moodys.svg', h: 'h-6' },
+  { name: 'Dentsu', sector: 'Advertising', logo: '/logos/dentsu.svg', h: 'h-6' },
+  { name: 'GlobalLogic', sector: 'Digital Engineering', logo: '/logos/globallogic.png', h: 'h-8' },
+  { name: 'Infosys', sector: 'IT Services', logo: '/logos/infosys.svg', h: 'h-7' },
+  { name: 'Wipro', sector: 'IT Services', logo: '/logos/wipro.svg', h: 'h-10' },
+  { name: 'TCS', sector: 'IT Consulting', logo: '/logos/tcs.svg', h: 'h-9' },
+  { name: 'Kyndryl', sector: 'Infrastructure', logo: '/logos/kyndryl.svg', h: 'h-7' },
+  { name: 'Amphenol', sector: 'Manufacturing', logo: '/logos/amphenol.svg', h: 'h-6' },
+  { name: 'DishTV', sector: 'Media', logo: '/logos/dishtv.svg', h: 'h-8' },
+  { name: 'Actian', sector: 'Data Platforms', logo: '/logos/actian.svg', h: 'h-7' },
+  { name: 'Crecientech', sector: 'Technology', logo: '/logos/crecientech.png', h: 'h-9' },
+  { name: 'Primus Partners', sector: 'Public Sector', logo: '/logos/primus.png', h: 'h-9' },
 ];
 
 export const services = [
