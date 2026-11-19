@@ -1,0 +1,62 @@
+---
+import { footerLinks, offices, site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-100 bg-white pb-10 pt-16 text-slate-600 sm:pt-20">
+  <div class="container-x">
+    <div class="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_0.8fr]">
+      <div>
+        <a href="/" aria-label="Aagati home"><img src={site.logo} alt="AagatiServe logo" class="h-10 w-auto" width="150" height="40" loading="lazy" /></a>
+        <p class="mt-5 max-w-xs leading-relaxed">
+          Transforming businesses through innovative technology solutions and strategic consulting services.
+        </p>
+        <a href={`mailto:${site.email}`} class="mt-5 inline-block font-bold text-brand-600 hover:underline">{site.email}</a>
+
+        <h3 class="mb-4 mt-8 text-sm font-bold text-navy-950">Our Global Presence</h3>
+        <ul class="space-y-4 text-sm">
+          {
+            offices.map((o) => (
+              <li>
+                <p class="font-bold text-navy-950">{o.city}</p>
+                <p class="leading-relaxed">{o.address}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href={site.linkedin} aria-label="LinkedIn" class="flex size-10 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition hover:bg-brand-600 hover:text-white">
+            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href={site.instagram} aria-label="Instagram" class="flex size-10 items-center justify-center rounded-full bg-brand-50 text-brand-600 transition hover:bg-brand-600 hover:text-white">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {
+        footerLinks.map((col) => (
+          <div>
+            <h3 class="mb-5 text-sm font-bold text-navy-950">{col.title}</h3>
+            <ul class="space-y-3 text-sm">
+              {col.links.map(([label, href]) => (
+                <li>
+                  <a href={href} class="transition hover:text-brand-600">{label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-8 text-sm sm:flex-row">
+      <p>© {site.legalName} {year} | All rights reserved</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-brand-600">Privacy Policy</a>
+        <a href="#" class="hover:text-brand-600">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

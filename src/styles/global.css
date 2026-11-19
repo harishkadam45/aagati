@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Brand palette (matched to reference design) */
+  --color-navy-950: #0b132a;
+  --color-navy-900: #121c3a;
+  --color-navy-800: #1b2750;
+  --color-brand-50: #f4f9ff;
+  --color-brand-100: #e0f0ff;
+  --color-brand-500: #0095ff;
+  --color-brand-600: #0071cc;
+  --color-brand-700: #005ba6;
+  --color-accent-500: #ff6a00;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee 40s linear infinite reverse;
+  --animate-word: word-in 0.5s ease-out both;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes word-in {
+    from { opacity: 0; transform: translateY(40%); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    @apply bg-white font-sans text-slate-600 antialiased;
+  }
+  h1, h2, h3, h4 { @apply text-navy-950; }
+}
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+@utility section { @apply py-16 sm:py-20 lg:py-24; }
+
+@utility eyebrow {
+  @apply inline-block text-sm font-bold tracking-wide text-brand-600;
+}
+@utility heading-display {
+  @apply text-4xl font-extrabold leading-[1.08] tracking-[-0.035em] text-navy-950 sm:text-5xl lg:text-[64px];
+}
+@utility heading-section {
+  @apply text-3xl font-extrabold leading-[1.15] tracking-[-0.025em] text-navy-950 sm:text-4xl lg:text-[44px];
+}
+@utility heading-card {
+  @apply text-xl font-bold leading-snug tracking-[-0.025em] text-navy-950;
+}
+@utility lead { @apply text-base leading-relaxed text-slate-600 sm:text-lg; }
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-6 py-2.5 text-sm font-bold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+}
+@utility btn-primary {
+  @apply btn border-brand-600 bg-brand-600 text-white hover:-translate-y-0.5 hover:border-brand-700 hover:bg-brand-700 hover:shadow-[0_10px_24px_-10px_rgba(0,113,204,0.6)];
+}
+@utility btn-outline {
+  @apply btn border-brand-600 bg-gray-100 text-brand-600 hover:bg-brand-600 hover:text-white;
+}
+@utility btn-white {
+  @apply btn border-white bg-white text-navy-950 hover:bg-brand-50;
+}
+
+@utility card {
+  @apply rounded-2xl border border-slate-200/70 bg-white shadow-[0_1px_2px_rgba(11,19,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-100 hover:shadow-[0_20px_40px_-20px_rgba(11,19,42,0.25)];
+}

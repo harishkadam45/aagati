@@ -1,0 +1,55 @@
+---
+import { advantages, contactHref } from '../data/site';
+
+const icons: Record<string, string> = {
+  zap: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
+  trending: '<path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
+};
+---
+
+<section id="why" class="section bg-white">
+  <div class="container-x">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <span class="eyebrow mb-3">The AagatiServe Advantage</span>
+      <h2 class="heading-section">Your Outcomes. Our Obsession. No Compromises.</h2>
+      <p class="lead mt-4">
+        We believe enterprise outcomes are non-negotiable. That is why our entire consulting and engineering model is built
+        around speed, quality, and measurable value.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        advantages.map((a, i) => (
+          <div class="card relative overflow-hidden bg-brand-50/60 p-8">
+            <span class="absolute right-6 top-5 text-6xl font-extrabold text-brand-600/10">0{i + 1}</span>
+            <div class="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand-600 text-white shadow-[0_12px_24px_-10px_rgba(0,113,204,0.7)]">
+              <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[a.icon]} />
+            </div>
+            <h3 class="heading-card">{a.title}</h3>
+            <p class="mt-3 leading-relaxed">{a.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Proof banner -->
+    <div class="mt-12 flex flex-col items-start gap-6 rounded-3xl border border-brand-100 bg-brand-50 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+      <div class="flex items-start gap-5">
+        <div class="hidden size-14 shrink-0 items-center justify-center rounded-2xl bg-accent-500 text-white sm:flex">
+          <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-brand-600">These aren't just case studies.</p>
+          <h3 class="mt-1 text-2xl font-extrabold tracking-tight text-navy-950">They are proof that transformation works.</h3>
+          <p class="mt-2 max-w-xl">Explore how Agentic AI, data observability and secure engineering moved the needle for enterprise teams.</p>
+        </div>
+      </div>
+      <div class="flex shrink-0 flex-wrap gap-3">
+        <a href="#case-studies" class="btn-outline">See Case Studies</a>
+        <a href={contactHref} class="btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>

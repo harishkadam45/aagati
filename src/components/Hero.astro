@@ -1,0 +1,60 @@
+---
+import RotatingWord from './RotatingWord.tsx';
+import StatCards from './StatCards.tsx';
+import { heroWords, heroStats, contactHref } from '../data/site';
+---
+
+<section class="relative isolate overflow-hidden bg-white pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20">
+  <!-- background: soft brand glow -->
+  <div class="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-brand-500/10 blur-3xl"></div>
+
+  <div class="container-x text-center">
+    <a
+      href="#services"
+      class="group mb-6 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 py-1 pl-1 pr-4 text-sm font-semibold text-navy-950 transition hover:border-brand-600/40"
+    >
+      <span class="rounded-full bg-brand-600 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white">New</span>
+      Aagati × Actian — real-time enterprise data, unified
+      <span class="text-brand-600 transition group-hover:translate-x-0.5">→</span>
+    </a>
+
+    <p class="eyebrow mb-4 block">AI Consulting & Software Development</p>
+
+    <h1 class="heading-display mx-auto max-w-5xl">
+      We engineer enterprise
+      <br class="hidden sm:block" />
+      <RotatingWord client:load words={heroWords} />
+    </h1>
+
+    <p class="lead mx-auto mt-8 max-w-2xl">
+      We start by understanding your actual problem — then we solve it fast. AI, data and product engineering shipped
+      from assessment to production in <strong class="font-bold text-navy-950">days, not quarters</strong>.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+      <a href={contactHref} class="btn-primary px-8 text-base">
+        Engineer Your Outcomes
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+      </a>
+      <a href="#case-studies" class="btn-outline px-8 text-base">See the outcomes</a>
+    </div>
+
+    <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+      <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-brand-600"></span>Enterprise-grade security</li>
+      <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-brand-600"></span>Explainable by design</li>
+      <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-brand-600"></span>Bengaluru · Gurugram · Delaware</li>
+    </ul>
+
+    <!-- Outcome stats -->
+    <div class="mx-auto mt-14 max-w-6xl rounded-3xl border border-slate-200/70 bg-white/80 p-2 sm:p-3 shadow-[0_30px_60px_-30px_rgba(11,19,42,0.25)] backdrop-blur">
+      <div class="flex items-center justify-between px-4 pb-2 pt-3 text-left">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Outcomes / delivered for enterprise clients</p>
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-600">
+          <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span></span>
+          Live
+        </span>
+      </div>
+      <StatCards client:load stats={heroStats} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+import { clients } from '../data/site';
+
+const half = Math.ceil(clients.length / 2);
+const rows = [
+  { items: clients.slice(0, half), anim: 'animate-marquee' },
+  { items: clients.slice(half), anim: 'animate-marquee-reverse' },
+];
+// each row is repeated 4× so the track is always wider than the screen; it scrolls by half (2 sets) for a seamless loop
+const repeat = <T,>(a: T[]) => [...a, ...a, ...a, ...a];
+---
+
+<section class="section overflow-hidden bg-white" aria-label="Clients">
+  <div class="container-x mb-12 text-center">
+    <span class="eyebrow mb-3">Our Clients</span>
+    <h2 class="heading-section">Trusted by enterprise teams shipping at scale</h2>
+    <p class="lead mx-auto mt-4 max-w-2xl">
+      Global leaders across finance, manufacturing, media and technology rely on Aagati to ship AI and engineering outcomes.
+    </p>
+  </div>
+
+  <div class="group space-y-6 [mask-image:linear-gradient(to_right,transparent,#000_10%,#000_90%,transparent)]">
+    {
+      rows.map((row) => (
+        <div class="overflow-hidden py-2">
+          <ul class={`flex w-max gap-6 ${row.anim} group-hover:[animation-play-state:paused] motion-reduce:animate-none`}>
+            {repeat(row.items).map((c, i) => (
+              <li
+                aria-hidden={i >= row.items.length ? 'true' : undefined}
+                class="flex h-[120px] w-[240px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200/80 bg-gray-100 px-6 transition duration-300 hover:-translate-y-1 hover:border-brand-500/50 hover:bg-white hover:shadow-[0_14px_30px_-16px_rgba(0,113,204,0.5)]"
+              >
+                <div class="flex h-14 w-full items-center justify-center">
+                  <img
+                    src={c.logo}
+                    alt={`${c.name} logo`}
+                    class={`${c.h} max-w-[180px] object-contain`}
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
+                </div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">{c.sector}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import { approach, contactHref, services } from '../data/site';
+---
+
+<section id="about" class="section bg-white">
+  <div class="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="relative">
+      <div class="overflow-hidden rounded-3xl bg-brand-50">
+        <img
+          src={services[1].img}
+          alt="Aagati engineers working on enterprise systems"
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+          width="640"
+          height="480"
+        />
+      </div>
+      <div class="absolute -bottom-6 -right-2 rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_24px_48px_-20px_rgba(11,19,42,0.35)] sm:-right-6">
+        <p class="text-3xl font-extrabold tracking-tight text-navy-950">Days<span class="text-brand-600">.</span></p>
+        <p class="text-sm text-slate-600">not quarters, to production</p>
+      </div>
+      <div class="absolute -left-2 -top-5 hidden rounded-2xl bg-navy-950 px-5 py-4 text-white shadow-xl sm:block">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-500">Problem-first</p>
+        <p class="text-sm font-semibold">Assessment → Production</p>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow mb-3">About Aagati</span>
+      <h2 class="heading-section">We understand the real problem — then solve it fast</h2>
+      <div class="mt-6 space-y-4 leading-relaxed">
+        <p>
+          AagatiServe combines deep engineering talent with strategic consulting to turn enterprise ambition into measurable
+          results. We begin by understanding the real problem, not the brief — then move fast.
+        </p>
+        <p>
+          Our teams across Bengaluru, Gurugram and Delaware ship AI, data and product engineering that is secure,
+          explainable and built to scale with your business.
+        </p>
+      </div>
+
+      <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+        {
+          approach.map((a) => (
+            <li class="flex items-center gap-3 font-semibold text-navy-950">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
+                <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>
+              </span>
+              {a}
+            </li>
+          ))
+        }
+      </ul>
+
+      <a href={contactHref} class="btn-primary mt-10">Free Consultation</a>
+    </div>
+  </div>
+</section>
